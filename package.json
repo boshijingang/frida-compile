@@ -1,57 +1,25 @@
 {
   "name": "frida-compile",
-  "version": "9.0.8",
-  "authors": [
-    "Frida Developers"
-  ],
   "description": "Compile a Frida script comprised of one or more Node.js modules",
-  "keywords": [
-    "frida"
+  "version": "10.0.0",
+  "license": "LGPL-2.0 WITH WxWindows-exception-3.1",
+  "main": "dist/index.js",
+  "files": [
+    "/dist/**/*.js",
+    "/dist/index.d.ts"
   ],
-  "homepage": "https://www.frida.re",
+  "bin": {
+    "frida-compile": "./dist/bin/compile.js"
+  },
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
   "engines": {
     "node": ">=8.0.0"
   },
-  "main": "index.js",
-  "files": [
-    "/index.js",
-    "/bin/compile.js",
-    "/lib/**/*.js"
-  ],
-  "bin": {
-    "frida-compile": "./bin/compile.js"
-  },
-  "dependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/plugin-transform-runtime": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/runtime-corejs2": "^7.5.5",
-    "@frida/uglifyify": "^6.0.1",
-    "babelify": "^10.0.0",
-    "bignumber.js": "^9.0.0",
-    "browserify": "^16.2.3",
-    "chalk": "^2.4.1",
-    "chokidar": "^3.0.0",
-    "commander": "^3.0.0",
-    "concat-stream": "^2.0.0",
-    "esmify": "^2.1.1",
-    "frida-any-promise": "^2.0.0",
-    "frida-buffer": "^1.0.7",
-    "frida-fs": "^3.0.0",
-    "frida-http": "^3.0.0",
-    "frida-net": "^3.0.1",
-    "frida-process": "^3.0.1",
-    "mkdirp": "^0.5.1",
-    "mold-source-map": "^0.4.0",
-    "node-notifier": "^5.1.2",
-    "through2": "^3.0.1",
-    "tsify": "^4.0.0",
-    "typescript": "^3.5.1"
-  },
-  "scripts": {
-    "pretest": "jshint bin/*.js"
-  },
-  "license": "LGPL-2.0 WITH WxWindows-exception-3.1",
+  "homepage": "https://www.frida.re",
   "repository": {
     "type": "git",
     "url": "https://github.com/frida/frida-compile.git"
@@ -59,7 +27,16 @@
   "bugs": {
     "url": "https://github.com/frida/frida-compile/issues"
   },
+  "authors": [
+    "Frida Developers"
+  ],
+  "keywords": [
+    "frida"
+  ],
   "devDependencies": {
-    "jshint": "^2.9.2"
+    "@types/node": "^12.12.7"
+  },
+  "dependencies": {
+    "typescript": "^3.7.2"
   }
 }
